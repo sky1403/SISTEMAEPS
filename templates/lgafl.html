@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>OFICINA VIRTUAL AFILIADOS - EPS Gran Colombia</title>
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/darkmode.css')}}">
+        <link href="{{url_for('static', filename='css/aos.css')}}" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.png')}}" />
+    </head>
+<body>
+    
+    <div class="container text-center my-5" data-aos="fade-left"
+    data-aos-anchor="#example-anchor"
+    data-aos-offset="500"
+    data-aos-duration="500">
+
+        <div class="container-fluid row row-cols-2 shadow-lg rounded-25 margin">
+            <div class="col my-5">
+                <img class="img-header" src="{{url_for('static', filename='img/medic2.svg')}}">
+            </div>
+            <div class="col my-2 py-2">
+                <form  class="needs-validation" action="{{url_for('validate')}}" method="post" novalidate>
+                    <div class="container-fluid row row-cols-1">
+                        <div class="col">
+                            <a href="{{ url_for('principal_page') }}"><img src="{{url_for('static', filename='img/logo dark.png')}}" height="100%" width="100%"> </a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <label class="h2 text-bold text-primary">Oficina virtual afiliados</label>
+                    </div>
+
+                    <div class="d-flex">
+                        <label class="h3 text-bold text-primary">Iniciar sesion</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        
+                        <select class="form-select" aria-label="Default select example" required name="tdoc">
+                            <option selected disabled value="">Selecciona</option>
+                            <option value="CEDULA_CC">Cedula de ciudadania</option>
+                            <option value="TARJETA_TI">Tarjeta de identidad</option>
+                            <option value="CEDULA_CE">Cedula de extranjeria</option>
+                            <option value="REG_CIVIL">Registro civil</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Selecciona una opcion
+                          </div>
+                    </div>
+                    <!-- Phone number input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" type="number" placeholder="" required name="DOC"/>
+                        <label for="phone">Numero de documento</label>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">El numero de documento es necesario</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" type="password" placeholder="" required name="PASSWORD"/>
+                        <label for="phone">Contraseña</label>
+                        <div class="invalid-feedback" data-sb-feedback="password:required">Contraseña requerida</div>
+                    </div>
+
+                    <div class="col-sm text-center">
+                        <button type="submit" class="btn btn-primary my-4 rounded-25 text-bold">Iniciar sesion</button>
+                    </div>
+                    <div class="col-sm text-center my-2">
+                      <a class="btn btn-primary rounded-25 text-bold" href="{{ url_for('register_afl') }}">¿No tienes cuenta? registrate aca</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{url_for('static', filename='validations-lg.js')}}"></script>
+    <script src="{{url_for('static', filename='aos.js')}}"></script>
+        <script>
+            AOS.init();
+          </script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

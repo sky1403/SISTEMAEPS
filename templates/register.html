@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>REGISTRO AFILIADO - EPS Gran Colombia</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/darkmode.css')}}">
+        <link href="{{url_for('static', filename='css/aos.css')}}" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.png')}}" />
+    </head>
+<body class="background-body">
+
+    <div class="container py-5 my-5" data-aos="fade-left">
+      
+        <div class="container row row-cols-2 shadow-lg rounded-25 margin">
+            <div class="col">
+                <img class="img-header" src="{{url_for('static', filename='img/medic3.svg')}}" >
+            </div>
+            
+            <!--FORM-->
+            <div class="col">
+                <form  action="{{url_for('r_users')}}" method="post" class="needs-validation" novalidate>
+
+                  <div class="container-fluid row row-cols-1">
+                    <div class="col">
+                        <a href="{{ url_for('principal_page') }}"><img src="{{url_for('static', filename='img/logo dark.png')}}" height="100%" width="100%"></a>
+                    </div>
+                </div>
+                    <div class="text-center"><label class="h1 text-bold text-primary">Registro afiliados</label></div>
+                    <div class="row row-cols-2">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="type-document" class="form-label">Tipo de documento</label>
+                                <select class="form-select"  id="type-document" required name="tdocumento">
+                                  <option selected disabled value="">Selecciona</option>
+                                  <option value="CEDULA_CC">Cedula de ciudadania</option>
+                                  <option value="TARJETA_TI">Tarjeta de identidad</option>
+                                  <option value="CEDULA_CE">Cedula de extranjeria</option>
+                                  <option value="REG_CIVIL">Registro civil</option>
+                                </select>
+                                <div class="invalid-feedback" >Selecciona un tipo de documento</div>
+                              </div> 
+        
+                              
+
+                              <div class="mb-3">
+                                <label for="name" class="form-label">Nombres</label>
+                                <input type="text" class="form-control" id="name" placeholder=""  required name="name">
+                                <div class="invalid-feedback" >El nombre es requerido</div>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="email" class="form-label">Correo electronico</label>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com"   required name="email">
+                                <div class="invalid-feedback" >El correo que has ingresado es invalido</div>
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label for="inputPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="inputPassword" required>
+                                <div class="invalid-feedback" >Contraseña requerida</div>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="date" class="form-label">Telefono</label>
+                                <input type="number" class="form-control" id="phone" placeholder="31088..."  required name="phone">
+                                <div class="invalid-feedback" >Tu fecha de nacimiento es requerida</div>
+                              </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="document" class="form-label">Numero de documento</label>
+                                <input type="number" class="form-control" id="document" placeholder=""  required name="documento">
+                                <div class="invalid-feedback" >El numero de documento es necesario</div>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="lastname" class="form-label">Apellidos</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="" required name="lname">
+                                <div class="invalid-feedback" >Tu apellido es necesario</div>
+                              </div>
+                              
+                              <div class="mb-3">
+                                <label for="email2" class="form-label">Repetir correo electronico</label>
+                                <input type="email" class="form-control" id="email2" placeholder="name@example.com" required>
+                                <div class="invalid-feedback hide" id="label-hide">El correo que has ingresado no coincide</div>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="inputPassword" class="form-label"> Repetir contraseña</label>
+                                <input type="password" class="form-control" id="inputPassword2" required name="password">
+                                <div class="invalid-feedback" id="label-invalid">La contraseña que has introducido no coincide</div>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="date" class="form-label">Fecha de nacimiento</label>
+                                <input type="text" class="form-control" id="date" placeholder="DD/MM/AAAA"  required name="date">
+                                <div class="invalid-feedback" >Tu fecha de nacimiento es requerida</div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-sm text-center">
+                        <button type="submit" class="btn btn-primary my-4 rounded-25 text-bold" id="btn-sub">ENVIAR DATOS</button>
+                    </div>
+                    <div class="col-sm text-center my-2 py-3">
+                      <a class="btn btn-primary rounded-25 text-bold" href="{{ url_for('office_afl') }}">¿Ya tienes tu cuenta? Iniciar sesión</a>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+ 
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{url_for('static', filename='validations-rg.js')}}"></script>
+    <script src="{{url_for('static', filename='swalerts.js')}}"></script>
+    <script src="{{url_for('static', filename='aos.js')}}"></script>
+    <script>
+        AOS.init();
+      </script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

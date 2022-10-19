@@ -1,0 +1,99 @@
+:root{
+    --dark:hwb(0 25% 75%);
+    --light-dark:#646b74;
+    --principal:#0078F7;
+    --shadow:#646b7428;
+    --secondary:#E52030;
+}
+
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+.btn-primary{
+    background-color: var(--principal);
+}
+
+.rounded-25{
+    border-radius: 25px;
+}
+
+.bg-darken{
+    background-color: var(--dark);
+}
+
+.decoration-none:hover{
+    text-decoration: none;
+}
+
+.card:hover{
+    background-color: var(--shadow);
+}
+
+.icons{
+    background: transparent;
+    color: var(--secondary);
+    height: 5em;
+    fill: var(--secondary);
+}
+
+.separator {
+    margin-left: 100px;
+    padding-left: 50px;
+}
+
+
+/* SERVICES YOUR DISPOSITION*/
+.icons-services{
+    color: var(--secondary);
+    height: 12em;
+    width: 12em;
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.numbers{
+    color: var(--principal);
+}
+
+/*FOOTER*/
+
+.title-footer{
+    color: #FFFF;
+}
+
+.links:hover{
+    text-decoration: none;
+    color:var(--principal);
+}
+
+
+
+
+/*PAGE REGISTER*/
+
+.img-header{
+    height: 90%;
+    width: 90%;
+}
+
+.background-body{
+    background: #fafaf6;
+}
+
+.margin{
+    border: var(--secondary) 0.5px solid;
+}
+
+
+/*DASHBOARD WORKERS*/
+
+.img-404{
+    height: 34%;
+    width: 34%;
+}
