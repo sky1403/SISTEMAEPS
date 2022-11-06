@@ -13,18 +13,25 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+        <link href="{{url_for('static', filename='css/loader.css')}}" rel="stylesheet" />
         <link rel="stylesheet" href="{{url_for('static', filename='css/darkmode.css')}}">
         <link href="{{url_for('static', filename='css/aos.css')}}" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.png')}}" />
     </head>
 <body>
+
+    
     
     <div class="container text-center my-5" data-aos="fade-left"
     data-aos-anchor="#example-anchor"
     data-aos-offset="500"
     data-aos-duration="500">
+   
+    <div class="heart" id="heart">
 
-        <div class="container-fluid row row-cols-2 shadow-lg rounded-25 margin">
+      </div>
+
+        <div class="container-fluid row row-cols-2 shadow-lg rounded-25 margin ocultar" id="cuerpo">
             <div class="col my-5">
                 <img class="img-header" src="{{url_for('static', filename='img/medic2.svg')}}">
             </div>
@@ -83,6 +90,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{url_for('static', filename='validations-lg.js')}}"></script>
+    <script src="{{url_for('static', filename='loader.js')}}"></script>
     <script src="{{url_for('static', filename='aos.js')}}"></script>
         <script>
             AOS.init();

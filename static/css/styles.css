@@ -878,6 +878,10 @@ progress {
     flex: 1 0 0%;
   }
 
+  .ocultar{
+    display: none;
+  }
+
   .row-cols-sm-auto > * {
     flex: 0 0 auto;
     width: auto;

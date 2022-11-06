@@ -59,6 +59,7 @@ def register_afl():
 
 
 
+
 @app.route("/<name>")
 def titulo_dinamico(name):
     return render_template('404.html', titulo=name)
@@ -236,7 +237,7 @@ def validate():
         pw_hash=datos['PASSWORD']
         if PW == pw_hash:
             session['id'] = Document
-            session['username'] = datos['NAME'] + datos['lastname']
+            session['username'] = datos['NAME'] + "  " + datos['lastname']
             conection.close()
             return redirect(url_for('dashboard'))
         else:
